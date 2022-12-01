@@ -1,0 +1,15 @@
+interface Product {
+    name: string;
+    color: string;
+    price: number;
+    stock: number;
+    image: string;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    background-color: rgb(147, 137, 134);
+    align-content: center;
+}

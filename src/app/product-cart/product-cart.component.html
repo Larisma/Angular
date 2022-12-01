@@ -1,0 +1,26 @@
+<h4>Carrito</h4>
+
+<ul>
+    <li *ngFor="let product of cartList$ | async">
+        <div>
+            <span>{{product.name | uppercase}}</span>
+        </div>
+        <div>
+            <span>{{product.name}} - {{product.price | currency}}</span>
+        </div>
+        <div>
+        <span>Cantidad: {{product.quantity}}</span>   
+        </div>
+        <div class="input">
+            <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock"
+            (maxReached)="maxReached($event)"></app-input-integer>
+        </div>
+        <div>
+            <span class="sub">Sub Total: <div>
+                <span class="sub">Sub Total: {{product.price * product.quantity | currency}}</span>
+            </div></span>
+        </div>
+      
+    </li>
+
+</ul>
